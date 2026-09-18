@@ -527,8 +527,19 @@ export default function App() {
     const ctx = canvas.getContext('2d');
     if (!ctx) return;
 
-    const img = preloadedImagesRef.current[index];
-    if (!img || !img.complete) return;
+    let img = preloadedImagesRef.current[index];
+    if (!img || !img.complete) {
+      let found = false;
+      for (let i = index - 1; i >= 0; i--) {
+        const candidate = preloadedImagesRef.current[i];
+        if (candidate && candidate.complete) {
+          img = candidate;
+          found = true;
+          break;
+        }
+      }
+      if (!found) return;
+    }
 
     const dpr = window.devicePixelRatio || 1;
     const rect = canvas.getBoundingClientRect();
@@ -570,8 +581,19 @@ export default function App() {
     const ctx = canvas.getContext('2d');
     if (!ctx) return;
 
-    const img = preloadedImages2Ref.current[index];
-    if (!img || !img.complete) return;
+    let img = preloadedImages2Ref.current[index];
+    if (!img || !img.complete) {
+      let found = false;
+      for (let i = index - 1; i >= 0; i--) {
+        const candidate = preloadedImages2Ref.current[i];
+        if (candidate && candidate.complete) {
+          img = candidate;
+          found = true;
+          break;
+        }
+      }
+      if (!found) return;
+    }
 
     const dpr = window.devicePixelRatio || 1;
     const rect = canvas.getBoundingClientRect();
