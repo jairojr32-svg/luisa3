@@ -453,8 +453,6 @@ export default function App() {
   const [isHovered, setIsHovered] = useState(false);
   const [isDarkBg, setIsDarkBg] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [showIntro, setShowIntro] = useState(true);
-  const [introFadeOut, setIntroFadeOut] = useState(false);
 
   useEffect(() => {
     const onMouseMove = (e: MouseEvent) => {
@@ -498,29 +496,6 @@ export default function App() {
       cancelAnimationFrame(animFrameId);
     };
   }, []);
-
-  // Timer para o preloader de abertura sofisticado
-  useEffect(() => {
-    if (currentPage !== 'home') {
-      setShowIntro(false);
-      return;
-    }
-
-    // Inicia o fade out de transição após 2.5 segundos (ritmo elegante de alta costura)
-    const fadeTimer = setTimeout(() => {
-      setIntroFadeOut(true);
-    }, 2500);
-
-    // Remove completamente a tela preta após 3.5 segundos para liberar a interatividade
-    const removeTimer = setTimeout(() => {
-      setShowIntro(false);
-    }, 3500);
-
-    return () => {
-      clearTimeout(fadeTimer);
-      clearTimeout(removeTimer);
-    };
-  }, [currentPage]);
 
   const scrollProgressRef = useRef(0);
   const scrollSectionRef = useRef<HTMLDivElement>(null);
@@ -954,35 +929,6 @@ export default function App() {
   return (
     <ReactLenis root options={{ lerp: 0.08, smoothWheel: true, orientation: 'vertical' }}>
       
-      {/* Intro Preloader de Abertura Luxuosa */}
-      {showIntro && (
-        <div className={`fixed inset-0 w-full h-screen bg-[#0b0c10] z-[999] flex flex-col justify-center items-center px-8 transition-opacity duration-[1000ms] ease-out ${introFadeOut ? 'opacity-0 pointer-events-none' : 'opacity-100 pointer-events-auto'}`}>
-          <div className="flex flex-col items-center space-y-8 max-w-lg text-center animate-fade-in-up">
-            {/* Logotipo Centralizado com Brilho e Escala Suave */}
-            <div className="relative group select-none pointer-events-none">
-              {/* Glow Dourado de Fundo */}
-              <div className="absolute inset-0 bg-[#c5a880]/10 blur-3xl rounded-full scale-125 transition-transform duration-[3000ms] group-hover:scale-150" />
-              
-              <img 
-                src="/Negative Salar Balloons Arc.png" 
-                alt="Salar Balloons Logo" 
-                className="w-auto h-24 sm:h-32 md:h-36 object-contain relative z-10 animate-luxury-pulse" 
-              />
-            </div>
-            
-            {/* Micro-Texto Elegante e Letras Espaçadas */}
-            <div className="space-y-2 select-none pointer-events-none">
-              <span className="block text-[10px] font-mono tracking-[0.45em] text-[#c5a880]/80 uppercase font-semibold">
-                Salar Balloons
-              </span>
-              <span className="block text-[8px] font-sans tracking-[0.35em] text-white/35 uppercase">
-                Sartorial Luxury in the Sky • Uyuni
-              </span>
-            </div>
-          </div>
-        </div>
-      )}
-
       {/* High-Performance Film Grain Overlay */}
       <div className="film-grain" />
 
