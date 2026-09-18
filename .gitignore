@@ -1,0 +1,52 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Dependencies
+node_modules
+jspm_packages
+
+# Build outputs
+dist
+dist-ssr
+build
+out
+
+# Local env files
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDEs
+.vscode/
+.idea/
+*.suo
+*.ntvsca
+*.njsproj
+*.sln
+*.swp
+
+# Large video assets and archives (prevents GitHub 100MB limits and heavy pushes)
+*.mov
+*.mp4
+*.webm
+*.avi
+*.mkv
+*.zip
+*.rar
+*.tar.gz
+
+# AI / tool private files
+.gemini/
+responsive_overhaul.py
