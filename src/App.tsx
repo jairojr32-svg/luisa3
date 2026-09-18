@@ -453,6 +453,7 @@ export default function App() {
   const [isHovered, setIsHovered] = useState(false);
   const [isDarkBg, setIsDarkBg] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isFirstFrameDrawn, setIsFirstFrameDrawn] = useState(false);
 
   useEffect(() => {
     const onMouseMove = (e: MouseEvent) => {
@@ -657,6 +658,7 @@ export default function App() {
         // Renderiza o primeiro frame assim que ele estiver pronto
         if (i === 0) {
           drawFrame(0);
+          setIsFirstFrameDrawn(true);
         }
         if (loadedCount === 300) {
           ScrollTrigger.refresh();
@@ -956,9 +958,17 @@ export default function App() {
         className="fixed top-0 left-0 w-full h-screen z-0 bg-[#0b0c10]"
         style={{ display: currentPage === 'home' ? 'block' : 'none' }}
       >
+        {/* Placeholder estático instantâneo de primeiro frame */}
+        {!isFirstFrameDrawn && (
+          <img 
+            src="/frames/frame_000.jpg" 
+            alt="First frame placeholder" 
+            className="absolute inset-0 w-full h-full object-cover z-10" 
+          />
+        )}
         <canvas
           ref={canvasRef}
-          className="w-full h-full block"
+          className="w-full h-full block relative z-0"
         />
       </div>
 
