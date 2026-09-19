@@ -500,6 +500,7 @@ export default function App() {
 
   const scrollProgressRef = useRef(0);
   const scrollSectionRef = useRef<HTMLDivElement>(null);
+  const heroSectionRef = useRef<HTMLDivElement>(null);
   const whiteTransitionOverlayRef = useRef<HTMLDivElement>(null);
   const whiteSectionRef = useRef<HTMLDivElement>(null);
   const webglContainerRef = useRef<HTMLDivElement>(null);
@@ -698,9 +699,10 @@ export default function App() {
     return () => window.removeEventListener('resize', handleResize);
   }, [currentPage]);
 
-  useLenis(({ progress }) => {
+  useLenis(({ progress, scroll }) => {
     if (currentPage === 'home') {
-      const scrollProgress = Math.min(progress / 0.3, 1);
+      const heroHeight = window.innerHeight * 2;
+      const scrollProgress = Math.min(scroll / heroHeight, 1);
       scrollProgressRef.current = scrollProgress;
 
       // Renderização instantânea do frame correspondente
@@ -708,7 +710,7 @@ export default function App() {
       drawFrame(frameIndex);
 
       // Otimização de Performance
-      if (progress > 0.32) {
+      if (scroll > heroHeight) {
         if (webglContainerRef.current && webglContainerRef.current.style.display !== 'none') {
           webglContainerRef.current.style.display = 'none';
         }
@@ -755,9 +757,9 @@ export default function App() {
       { opacity: 0 },
       {
         scrollTrigger: {
-          trigger: scrollSectionRef.current,
-          start: '25% top',
-          end: '33% top',
+          trigger: heroSectionRef.current,
+          start: '50% top',  // Começa no meio do hero (100vh)
+          end: '100% top',  // Termina no final do hero (200vh)
           scrub: true,
         },
         opacity: 1,
@@ -768,9 +770,9 @@ export default function App() {
     // 2. Título Hero desvanece
     gsap.to('.hero-title-group', {
       scrollTrigger: {
-        trigger: scrollSectionRef.current,
-        start: 'top top',
-        end: '20% top',
+        trigger: heroSectionRef.current,
+        start: 'top top',   // Começa a sumir no início do scroll
+        end: '50% top',    // Desvanece totalmente na metade do hero (100vh)
         scrub: true,
       },
       opacity: 0,
@@ -1083,7 +1085,7 @@ export default function App() {
             </header>
 
         {/* CENA 1: HERO - Mantido limpo com o logotipo central */}
-        <section className="relative w-full h-[200vh]">
+        <section ref={heroSectionRef} className="relative w-full h-[200vh]">
           <div className="hero-title-group sticky top-0 h-screen w-full flex flex-col justify-center items-center pointer-events-none px-4">
             
             <div className="w-[85vw] md:w-[50vw] max-w-4xl py-4 flex justify-center items-center pointer-events-auto">
