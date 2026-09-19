@@ -1191,11 +1191,11 @@ export default function App() {
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-24 items-center">
               {/* Esquerda: Imagem em Arco (Recepção/Lobby do Hotel) */}
               <div className="lg:col-span-5 relative">
-                <div className="arched-card w-full max-w-[290px] xs:max-w-[360px] h-[460px] mx-auto overflow-hidden border border-black/5 shadow-[0_12px_40px_rgba(0,0,0,0.015)] relative group">
+                <div className="arched-card rounded-none w-full max-w-[450px] aspect-square mx-auto overflow-hidden border border-black/5 shadow-[0_12px_40px_rgba(0,0,0,0.015)] relative group">
                   <img 
                     src="/Fotos melhores /ps2.jpg" 
                     alt="Luxury Hotel Lobby" 
-                    className="w-full h-full object-cover scale-100 group-hover:scale-105 transition-transform duration-[1200ms] ease-out"
+                    className="w-full h-full object-cover rounded-none scale-100 group-hover:scale-105 transition-transform duration-[1200ms] ease-out"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/10 via-transparent to-transparent" />
                 </div>
@@ -1248,11 +1248,11 @@ export default function App() {
 
               {/* Direita: Imagem em Arco (Voo) */}
               <div className="lg:col-span-5 relative order-1 lg:order-2">
-                <div className="arched-card w-full max-w-[290px] xs:max-w-[360px] h-[460px] mx-auto overflow-hidden border border-black/5 shadow-[0_12px_40px_rgba(0,0,0,0.015)] relative group z-20">
+                <div className="arched-card rounded-none w-full max-w-[450px] aspect-square mx-auto overflow-hidden border border-black/5 shadow-[0_12px_40px_rgba(0,0,0,0.015)] relative group z-20">
                   <img 
                     src="/1 - SALAR/7E66BD85-1EED-4B07-8516-32FA296B5FF1_2.PNG" 
                     alt="Hot Air Balloon over Salar" 
-                    className="w-full h-full object-cover scale-100 group-hover:scale-105 transition-transform duration-[1200ms] ease-out"
+                    className="w-full h-full object-cover rounded-none scale-100 group-hover:scale-105 transition-transform duration-[1200ms] ease-out"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/10 via-transparent to-transparent" />
                 </div>
@@ -1263,11 +1263,11 @@ export default function App() {
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-24 items-center">
               {/* Esquerda: Imagem em Arco (Brunch) */}
               <div className="lg:col-span-5 relative">
-                <div className="arched-card w-full max-w-[290px] xs:max-w-[360px] h-[460px] mx-auto overflow-hidden border border-black/5 shadow-[0_12px_40px_rgba(0,0,0,0.015)] relative group">
+                <div className="arched-card rounded-none w-full max-w-[450px] aspect-square mx-auto overflow-hidden border border-black/5 shadow-[0_12px_40px_rgba(0,0,0,0.015)] relative group">
                   <img 
                     src="/Fotos melhores /Imagem 23-07-2026 às 19.54.jpg" 
                     alt="Luxury Breakfast" 
-                    className="w-full h-full object-cover scale-100 group-hover:scale-105 transition-transform duration-[1200ms] ease-out"
+                    className="w-full h-full object-cover rounded-none scale-100 group-hover:scale-105 transition-transform duration-[1200ms] ease-out"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/10 via-transparent to-transparent" />
                 </div>
@@ -1385,12 +1385,12 @@ export default function App() {
                   bg: "/1 - SALAR/2D6A17FC-C073-4365-8E61-27C6D6B3BC66_2.PNG"
                 }
               ].map((card, idx) => (
-                <div key={idx} className="exp-card min-h-[460px] h-auto pb-8 border border-white/10 rounded-[2rem] p-6 xs:p-8 flex flex-col justify-between relative overflow-hidden group hover:scale-[1.01] transition-all duration-500 shadow-[0_12px_40px_rgba(0,0,0,0.12)]">
+                <div key={idx} className="exp-card rounded-none aspect-square pb-8 border border-white/10 p-6 xs:p-8 flex flex-col justify-between relative overflow-hidden group hover:scale-[1.01] transition-all duration-500 shadow-[0_12px_40px_rgba(0,0,0,0.12)]">
                   {/* Background Image */}
                   <img 
                     src={card.bg} 
                     alt={card.title} 
-                    className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-[1200ms] ease-out -z-20" 
+                    className="absolute inset-0 w-full h-full object-cover rounded-none group-hover:scale-105 transition-transform duration-[1200ms] ease-out -z-20" 
                   />
                   {/* Dark overlay for perfect legibility */}
                   <div className="absolute inset-0 bg-black/45 group-hover:bg-black/50 transition-colors duration-500 -z-10" />
