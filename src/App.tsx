@@ -1461,32 +1461,32 @@ export default function App() {
 
             {/* Editorial Grid Layout */}
             <div className="grid grid-cols-1 md:grid-cols-12 gap-8">
-              <div className="gallery-item md:col-span-8 min-h-[300px] md:h-[380px] rounded-[2rem] overflow-hidden border border-black/5 group relative cursor-pointer">
+              <div className="gallery-item md:col-span-8 min-h-[300px] md:h-[380px] rounded-none overflow-hidden border border-black/5 group relative cursor-pointer">
                 <img 
                   src="/1 - SALAR/AdobeStock_680985457.jpeg" 
                   alt="Balloon Sky" 
-                  className="w-full h-full object-cover scale-100 group-hover:scale-105 transition-transform duration-[1200ms] ease-out"
+                  className="w-full h-full object-cover rounded-none scale-100 group-hover:scale-105 transition-transform duration-[1200ms] ease-out"
                 />
               </div>
-              <div className="gallery-item md:col-span-4 min-h-[300px] md:h-[380px] rounded-[2rem] overflow-hidden border border-black/5 group relative cursor-pointer">
+              <div className="gallery-item md:col-span-4 min-h-[300px] md:h-[380px] rounded-none overflow-hidden border border-black/5 group relative cursor-pointer">
                 <img 
                   src="/Fotos melhores /Imagem 23-07-2026 às 19.53.jpg" 
                   alt="Champagne Celebration" 
-                  className="w-full h-full object-cover scale-100 group-hover:scale-105 transition-transform duration-[1200ms] ease-out"
+                  className="w-full h-full object-cover rounded-none scale-100 group-hover:scale-105 transition-transform duration-[1200ms] ease-out"
                 />
               </div>
-              <div className="gallery-item md:col-span-4 min-h-[300px] md:h-[450px] rounded-[2rem] overflow-hidden border border-black/5 group relative cursor-pointer">
+              <div className="gallery-item md:col-span-4 min-h-[300px] md:h-[450px] rounded-none overflow-hidden border border-black/5 group relative cursor-pointer">
                 <img 
                   src="/Experiencia Salar Balloons/Snapinst.app_444485847_843359851167119_158335465410395033_n_1080.jpg" 
                   alt="Gourmet Service" 
-                  className="w-full h-full object-cover scale-100 group-hover:scale-105 transition-transform duration-[1200ms] ease-out"
+                  className="w-full h-full object-cover rounded-none scale-100 group-hover:scale-105 transition-transform duration-[1200ms] ease-out"
                 />
               </div>
-              <div className="gallery-item md:col-span-8 min-h-[300px] md:h-[450px] rounded-[2rem] overflow-hidden border border-black/5 group relative cursor-pointer">
+              <div className="gallery-item md:col-span-8 min-h-[300px] md:h-[450px] rounded-none overflow-hidden border border-black/5 group relative cursor-pointer">
                 <img 
                   src="/Fotos melhores /Imagem 23-07-2026 às 19.52.jpg" 
                   alt="Unforgettable reflections" 
-                  className="w-full h-full object-cover scale-100 group-hover:scale-105 transition-transform duration-[1200ms] ease-out"
+                  className="w-full h-full object-cover rounded-none scale-100 group-hover:scale-105 transition-transform duration-[1200ms] ease-out"
                 />
               </div>
             </div>
