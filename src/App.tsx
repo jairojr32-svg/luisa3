@@ -439,51 +439,20 @@ export default function App() {
     const handleHashChange = () => {
       const hash = window.location.hash.replace('#', '');
       setCurrentPage(hash || 'home');
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+      window.scrollTo(0, 0);
     };
     window.addEventListener('hashchange', handleHashChange);
     return () => window.removeEventListener('hashchange', handleHashChange);
   }, []);
 
-  // 1. REF-BASED ZERO-LAG CUSTOM CURSOR STATE & EFFECTS
-  const cursorDotRef = useRef<HTMLDivElement>(null);
-  const cursorRingRef = useRef<HTMLDivElement>(null);
-  const mousePos = useRef({ x: -100, y: -100 });
-  const ringPos = useRef({ x: -100, y: -100 });
-  const [isHovered, setIsHovered] = useState(false);
-  const [isDarkBg, setIsDarkBg] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isFirstFrameDrawn, setIsFirstFrameDrawn] = useState(false);
+  const [isDarkBg, setIsDarkBg] = useState(false);
 
   useEffect(() => {
-    const onMouseMove = (e: MouseEvent) => {
-      mousePos.current = { x: e.clientX, y: e.clientY };
-    };
-
-    window.addEventListener('mousemove', onMouseMove);
-
-    let animFrameId: number;
-    const updateCursor = () => {
-      ringPos.current.x += (mousePos.current.x - ringPos.current.x) * 0.15;
-      ringPos.current.y += (mousePos.current.y - ringPos.current.y) * 0.15;
-
-      if (cursorDotRef.current) {
-        cursorDotRef.current.style.transform = `translate3d(${mousePos.current.x}px, ${mousePos.current.y}px, 0)`;
-      }
-      if (cursorRingRef.current) {
-        cursorRingRef.current.style.transform = `translate3d(${ringPos.current.x}px, ${ringPos.current.y}px, 0)`;
-      }
-
-      animFrameId = requestAnimationFrame(updateCursor);
-    };
-    updateCursor();
-
     const handleMouseOver = (e: MouseEvent) => {
       const target = e.target as HTMLElement;
       if (!target) return;
-      
-      const closestInteractive = target.closest('a, button, [role="button"], .group, .diff-card, .exp-card, .gallery-item, .arched-card, .timeline-item');
-      setIsHovered(!!closestInteractive);
 
       const closestDarkSection = target.closest('.bg-[#0a0a0a], .bg-[#0b0c10]');
       setIsDarkBg(!!closestDarkSection);
@@ -492,9 +461,7 @@ export default function App() {
     window.addEventListener('mouseover', handleMouseOver);
 
     return () => {
-      window.removeEventListener('mousemove', onMouseMove);
       window.removeEventListener('mouseover', handleMouseOver);
-      cancelAnimationFrame(animFrameId);
     };
   }, []);
 
@@ -751,191 +718,192 @@ export default function App() {
     if (currentPage !== 'home') return;
 
     // Orquestração Awwwards GSAP
-    
-    // 1. Wipe Branco Perfeito
-    gsap.fromTo(whiteTransitionOverlayRef.current,
-      { opacity: 0 },
-      {
-        scrollTrigger: {
-          trigger: heroSectionRef.current,
-          start: '50% top',  // Começa no meio do hero (100vh)
-          end: '100% top',  // Termina no final do hero (200vh)
-          scrub: true,
-        },
-        opacity: 1,
-        ease: 'power1.inOut'
-      }
-    );
-
-    // 2. Título Hero desvanece
-    gsap.to('.hero-title-group', {
-      scrollTrigger: {
-        trigger: heroSectionRef.current,
-        start: 'top top',   // Começa a sumir no início do scroll
-        end: '50% top',    // Desvanece totalmente na metade do hero (100vh)
-        scrub: true,
-      },
-      opacity: 0,
-      y: -50,
-      scale: 1.05,
-    });
-
-    // 3. Revelação Letra-por-Letra (SplitText na primeira seção branca)
-    const chars = whiteSectionRef.current?.querySelectorAll('.split-char');
-    if (chars && chars.length > 0) {
-      gsap.fromTo(chars, 
-        { y: '100%', opacity: 0 },
+    const ctx = gsap.context(() => {
+      // 1. Wipe Branco Perfeito
+      gsap.fromTo(whiteTransitionOverlayRef.current,
+        { opacity: 0 },
         {
           scrollTrigger: {
-            trigger: whiteSectionRef.current,
-            start: 'top 65%',
-            end: 'top 20%',
-            scrub: 1,
+            trigger: heroSectionRef.current,
+            start: '50% top',  // Começa no meio do hero (100vh)
+            end: '100% top',  // Termina no final do hero (200vh)
+            scrub: true,
           },
-          y: '0%',
           opacity: 1,
-          stagger: 0.01,
-          ease: 'power3.out',
+          ease: 'power1.inOut'
         }
       );
-    }
 
-    // 4. Animação de entrada dos cards arqueados na Seção Journey (Revelados individualmente ao entrarem em cena)
-    const archedCards = sectionJourneyRef.current?.querySelectorAll('.arched-card');
-    if (archedCards && archedCards.length > 0) {
-      archedCards.forEach((card) => {
-        gsap.fromTo(card,
-          { y: 60, opacity: 0 },
+      // 2. Título Hero desvanece
+      gsap.to('.hero-title-group', {
+        scrollTrigger: {
+          trigger: heroSectionRef.current,
+          start: 'top top',   // Começa a sumir no início do scroll
+          end: '50% top',    // Desvanece totalmente na metade do hero (100vh)
+          scrub: true,
+        },
+        opacity: 0,
+        y: -50,
+        scale: 1.05,
+      });
+
+      // 3. Revelação Letra-por-Letra (SplitText na primeira seção branca)
+      const chars = whiteSectionRef.current?.querySelectorAll('.split-char');
+      if (chars && chars.length > 0) {
+        gsap.fromTo(chars, 
+          { y: '100%', opacity: 0 },
           {
             scrollTrigger: {
-              trigger: card,
-              start: 'top 85%',
-              end: 'top 55%',
+              trigger: whiteSectionRef.current,
+              start: 'top 65%',
+              end: 'top 20%',
+              scrub: 1,
+            },
+            y: '0%',
+            opacity: 1,
+            stagger: 0.01,
+            ease: 'power3.out',
+          }
+        );
+      }
+
+      // 4. Animação de entrada dos cards arqueados na Seção Journey (Revelados individualmente ao entrarem em cena)
+      const archedCards = sectionJourneyRef.current?.querySelectorAll('.arched-card');
+      if (archedCards && archedCards.length > 0) {
+        archedCards.forEach((card) => {
+          gsap.fromTo(card,
+            { y: 60, opacity: 0 },
+            {
+              scrollTrigger: {
+                trigger: card,
+                start: 'top 85%',
+                end: 'top 55%',
+                scrub: 0.5,
+              },
+              y: 0,
+              opacity: 1,
+              ease: 'power2.out'
+            }
+          );
+        });
+      }
+
+      // Animação do balão flutuante principal (The Odyssey)
+      const journeyBalloon = sectionJourneyRef.current?.querySelector('.journey-balloon');
+      if (journeyBalloon) {
+        gsap.fromTo(journeyBalloon,
+          { y: 100, opacity: 0, scale: 0.9 },
+          {
+            scrollTrigger: {
+              trigger: journeyBalloon,
+              start: 'top 90%',
+              end: 'top 50%',
               scrub: 0.5,
             },
             y: 0,
             opacity: 1,
+            scale: 1,
             ease: 'power2.out'
           }
         );
-      });
-    }
+      }
 
-    // Animação do balão flutuante principal (The Odyssey)
-    const journeyBalloon = sectionJourneyRef.current?.querySelector('.journey-balloon');
-    if (journeyBalloon) {
-      gsap.fromTo(journeyBalloon,
-        { y: 100, opacity: 0, scale: 0.9 },
-        {
-          scrollTrigger: {
-            trigger: journeyBalloon,
-            start: 'top 90%',
-            end: 'top 50%',
-            scrub: 0.5,
-          },
-          y: 0,
-          opacity: 1,
-          scale: 1,
-          ease: 'power2.out'
-        }
-      );
-    }
+      // 5. Revelação dos itens da Timeline (Cada passo aparece exatamente quando passa por sua respectiva tela)
+      const timelineItems = sectionJourneyRef.current?.querySelectorAll('.timeline-item');
+      if (timelineItems && timelineItems.length > 0) {
+        timelineItems.forEach((item) => {
+          gsap.fromTo(item,
+            { x: 30, opacity: 0 },
+            {
+              scrollTrigger: {
+                trigger: item,
+                start: 'top 85%',
+                end: 'top 60%',
+                scrub: 0.5,
+              },
+              x: 0,
+              opacity: 1,
+              ease: 'power2.out'
+            }
+          );
+        });
+      }
 
-    // 5. Revelação dos itens da Timeline (Cada passo aparece exatamente quando passa por sua respectiva tela)
-    const timelineItems = sectionJourneyRef.current?.querySelectorAll('.timeline-item');
-    if (timelineItems && timelineItems.length > 0) {
-      timelineItems.forEach((item) => {
-        gsap.fromTo(item,
-          { x: 30, opacity: 0 },
+      // 6. Diferenciais Ultra-Premium
+      const diffItems = sectionDifferencesRef.current?.querySelectorAll('.diff-card');
+      if (diffItems && diffItems.length > 0) {
+        gsap.fromTo(diffItems,
+          { y: 50, opacity: 0 },
           {
             scrollTrigger: {
-              trigger: item,
-              start: 'top 85%',
-              end: 'top 60%',
-              scrub: 0.5,
+              trigger: sectionDifferencesRef.current,
+              start: 'top 80%',
+              end: 'top 40%',
+              scrub: 1,
             },
-            x: 0,
+            y: 0,
             opacity: 1,
+            stagger: 0.1,
             ease: 'power2.out'
           }
         );
-      });
-    }
+      }
 
-    // 6. Diferenciais Ultra-Premium
-    const diffItems = sectionDifferencesRef.current?.querySelectorAll('.diff-card');
-    if (diffItems && diffItems.length > 0) {
-      gsap.fromTo(diffItems,
-        { y: 50, opacity: 0 },
-        {
-          scrollTrigger: {
-            trigger: sectionDifferencesRef.current,
-            start: 'top 80%',
-            end: 'top 40%',
-            scrub: 1,
-          },
-          y: 0,
-          opacity: 1,
-          stagger: 0.1,
-          ease: 'power2.out'
-        }
-      );
-    }
+      // 7. Cards de Escolha de Experiência
+      const expCards = sectionExperiencesRef.current?.querySelectorAll('.exp-card');
+      if (expCards && expCards.length > 0) {
+        gsap.fromTo(expCards,
+          { y: 60, opacity: 0 },
+          {
+            scrollTrigger: {
+              trigger: sectionExperiencesRef.current,
+              start: 'top 75%',
+              end: 'top 40%',
+              scrub: 1,
+            },
+            y: 0,
+            opacity: 1,
+            stagger: 0.15,
+            ease: 'power3.out'
+          }
+        );
+      }
 
-    // 7. Cards de Escolha de Experiência
-    const expCards = sectionExperiencesRef.current?.querySelectorAll('.exp-card');
-    if (expCards && expCards.length > 0) {
-      gsap.fromTo(expCards,
-        { y: 60, opacity: 0 },
-        {
-          scrollTrigger: {
-            trigger: sectionExperiencesRef.current,
-            start: 'top 75%',
-            end: 'top 40%',
-            scrub: 1,
-          },
-          y: 0,
-          opacity: 1,
-          stagger: 0.15,
-          ease: 'power3.out'
-        }
-      );
-    }
+      // 8. Galeria de Fotos
+      const galleryItems = sectionGalleryRef.current?.querySelectorAll('.gallery-item');
+      if (galleryItems && galleryItems.length > 0) {
+        gsap.fromTo(galleryItems,
+          { scale: 0.9, opacity: 0 },
+          {
+            scrollTrigger: {
+              trigger: sectionGalleryRef.current,
+              start: 'top 80%',
+              end: 'top 30%',
+              scrub: 1,
+            },
+            scale: 1,
+            opacity: 1,
+            stagger: 0.08,
+            ease: 'power1.out'
+          }
+        );
+      }
 
-    // 8. Galeria de Fotos
-    const galleryItems = sectionGalleryRef.current?.querySelectorAll('.gallery-item');
-    if (galleryItems && galleryItems.length > 0) {
-      gsap.fromTo(galleryItems,
-        { scale: 0.9, opacity: 0 },
-        {
-          scrollTrigger: {
-            trigger: sectionGalleryRef.current,
-            start: 'top 80%',
-            end: 'top 30%',
-            scrub: 1,
-          },
-          scale: 1,
-          opacity: 1,
-          stagger: 0.08,
-          ease: 'power1.out'
-        }
-      );
-    }
-
-    // 9. Sequência de Frames da Seção Infinito (Segunda Animação de Scroll)
-    if (sectionInfinityRef.current) {
-      ScrollTrigger.create({
-        trigger: sectionInfinityRef.current,
-        start: 'top bottom',
-        end: 'bottom top',
-        scrub: true,
-        onUpdate: (self) => {
-          scrollProgress2Ref.current = self.progress;
-          const frameIndex = Math.min(Math.floor(self.progress * 299), 299);
-          drawFrame2(frameIndex);
-        }
-      });
-    }
+      // 9. Sequência de Frames da Seção Infinito (Segunda Animação de Scroll)
+      if (sectionInfinityRef.current) {
+        ScrollTrigger.create({
+          trigger: sectionInfinityRef.current,
+          start: 'top bottom',
+          end: 'bottom top',
+          scrub: true,
+          onUpdate: (self) => {
+            scrollProgress2Ref.current = self.progress;
+            const frameIndex = Math.min(Math.floor(self.progress * 299), 299);
+            drawFrame2(frameIndex);
+          }
+        });
+      }
+    }, scrollSectionRef);
 
     // Recalcula todas as posições absolutas de ScrollTrigger após o carregamento completo do layout
     const timer1 = setTimeout(() => {
@@ -947,26 +915,17 @@ export default function App() {
     }, 3000);
 
     return () => {
+      ctx.revert();
       clearTimeout(timer1);
       clearTimeout(timer2);
     };
-  }, []);
+  }, [currentPage]);
 
   return (
     <ReactLenis root options={{ lerp: 0.08, smoothWheel: true, orientation: 'vertical' }}>
       
       {/* High-Performance Film Grain Overlay */}
       <div className="film-grain" />
-
-      {/* Custom Premium Interactive Magnetic Cursor */}
-      <div 
-        ref={cursorDotRef} 
-        className={`custom-cursor-dot pointer-events-none hidden lg:block ${isDarkBg ? 'bg-white' : 'bg-black'} ${isHovered ? 'scale-50 opacity-40' : 'scale-100'}`}
-      />
-      <div 
-        ref={cursorRingRef} 
-        className={`custom-cursor-ring pointer-events-none hidden lg:block ${isDarkBg ? 'border-white/25' : 'border-black/15'} ${isHovered ? 'w-14 h-14 border-[#c5a880]/55 bg-[#c5a880]/5' : 'w-8 h-8'}`}
-      />
 
       {/* Editorial Structural Gridlines Overlay */}
       <div className="fixed inset-0 pointer-events-none z-10 grid grid-cols-4 max-w-7xl mx-auto px-8 md:px-24 lg:px-32">
@@ -1153,7 +1112,7 @@ export default function App() {
                 detail of your flight is tailored to deliver the experience of a lifetime.
               </p>
               <div className="pt-6 flex justify-center space-x-6">
-                <a href="#voos" className="px-8 py-3.5 border border-black text-black bg-transparent rounded-full text-[10px] font-semibold tracking-[0.25em] uppercase hover:bg-black hover:text-white transition-all duration-500 cubic-bezier(0.16, 1, 0.3, 1)">
+                <a href="#experience" className="px-8 py-3.5 border border-black text-black bg-transparent rounded-full text-[10px] font-semibold tracking-[0.25em] uppercase hover:bg-black hover:text-white transition-all duration-500 cubic-bezier(0.16, 1, 0.3, 1)">
                   Discover Flight
                 </a>
               </div>
@@ -1559,9 +1518,14 @@ export default function App() {
             </p>
 
             <div className="flex flex-col sm:flex-row justify-center items-center gap-4 pt-4">
-              <button className="px-10 py-4 bg-black text-white border border-black rounded-full text-[10px] font-semibold tracking-[0.25em] uppercase hover:bg-transparent hover:text-black transition-all duration-500 cubic-bezier(0.16, 1, 0.3, 1) w-full sm:w-auto shadow-sm">
+              <a 
+                href="https://wa.me/5531982352679" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="px-10 py-4 bg-black text-white border border-black rounded-full text-[10px] font-semibold tracking-[0.25em] uppercase hover:bg-transparent hover:text-black transition-all duration-500 cubic-bezier(0.16, 1, 0.3, 1) w-full sm:w-auto shadow-sm"
+              >
                 Book Your Flight
-              </button>
+              </a>
               <button className="px-10 py-4 border border-black/10 text-black rounded-full text-[10px] font-semibold tracking-[0.25em] uppercase hover:bg-black hover:text-white hover:border-black transition-all duration-500 cubic-bezier(0.16, 1, 0.3, 1) w-full sm:w-auto">
                 Contact Our Team
               </button>
