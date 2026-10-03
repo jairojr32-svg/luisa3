@@ -1489,7 +1489,7 @@ export default function App() {
                 ensure that absolute peace of mind is guaranteed before take-off.
               </p>
               <div>
-                <a href="#contato" className="inline-block text-[10px] font-bold uppercase tracking-[0.2em] text-black border-b border-black pb-1 hover:text-[#c5a880] hover:border-[#c5a880] transition-colors duration-500">
+                <a href="#safety" className="inline-block text-[10px] font-bold uppercase tracking-[0.2em] text-black border-b border-black pb-1 hover:text-[#c5a880] hover:border-[#c5a880] transition-colors duration-500">
                   Learn About Safety
                 </a>
               </div>
@@ -1507,8 +1507,8 @@ export default function App() {
                 cinematic operations, documentaries, and luxury media campaigns under bespoke arrangements.
               </p>
               <div>
-                <a href="#contato" className="inline-block text-[10px] font-bold uppercase tracking-[0.2em] text-black border-b border-black pb-1 hover:text-[#c5a880] hover:border-[#c5a880] transition-colors duration-500">
-                  Explore Special Projects
+                <a href="#sustainability" className="inline-block text-[10px] font-bold uppercase tracking-[0.2em] text-black border-b border-black pb-1 hover:text-[#c5a880] hover:border-[#c5a880] transition-colors duration-500">
+                  Our Sustainability & Community Work
                 </a>
               </div>
             </div>
@@ -1539,9 +1539,14 @@ export default function App() {
               >
                 Book Your Flight
               </a>
-              <button className="px-10 py-4 border border-black/10 text-black rounded-full text-[10px] font-semibold tracking-[0.25em] uppercase hover:bg-black hover:text-white hover:border-black transition-all duration-500 cubic-bezier(0.16, 1, 0.3, 1) w-full sm:w-auto">
+              <a
+                href="https://wa.me/5531982352679"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-10 py-4 border border-black/10 text-black rounded-full text-[10px] font-semibold tracking-[0.25em] uppercase hover:bg-black hover:text-white hover:border-black transition-all duration-500 cubic-bezier(0.16, 1, 0.3, 1) w-full sm:w-auto"
+              >
                 Contact Our Team
-              </button>
+              </a>
             </div>
 
           </div>
