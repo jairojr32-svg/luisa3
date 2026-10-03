@@ -3,15 +3,25 @@ export default function Safety() {
     <div className="min-h-screen w-full bg-[#f8f9fa]/75 backdrop-blur-md text-black py-24 md:py-40 px-5 xs:px-6 sm:px-12 md:px-24 transition-all duration-500">
       <div className="max-w-7xl mx-auto space-y-32">
         
-        {/* HERO SECTION */}
-        <div className="text-center max-w-4xl mx-auto space-y-8">
-          <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-black/40">OPERATIONAL EXCELLENCE</span>
-          <h1 className="font-serif text-3xl xs:text-4xl sm:text-5xl md:text-7xl text-[#111] uppercase font-medium leading-tight">
-            Engineered for Safety. Built for Excellence.
-          </h1>
-          <p className="text-[#555] text-sm md:text-base leading-relaxed max-w-2xl mx-auto">
-            Every extraordinary experience begins with extraordinary preparation. At Salar Balloons, safety is not simply a priority — it is the foundation of everything we do.
-          </p>
+        {/* HERO SECTION with Background */}
+        <div className="relative text-center flex items-center justify-center min-h-[70vh] py-24 md:py-32">
+          <div className="absolute inset-0 z-0">
+            <img 
+              src="/Experiencia Salar Balloons/166685875-2.jpg" 
+              alt="Salar Balloons Safety" 
+              className="w-full h-full object-cover"
+            />
+            <div className="absolute inset-0 bg-black/30" />
+          </div>
+          <div className="relative z-10 max-w-4xl mx-auto space-y-8 px-5">
+            <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-white/70">OPERATIONAL EXCELLENCE</span>
+            <h1 className="font-serif text-3xl xs:text-4xl sm:text-5xl md:text-7xl text-white uppercase font-medium leading-tight">
+              Engineered for Safety. Built for Excellence.
+            </h1>
+            <p className="text-white/90 text-sm md:text-base leading-relaxed max-w-2xl mx-auto">
+              Every extraordinary experience begins with extraordinary preparation. At Salar Balloons, safety is not simply a priority — it is the foundation of everything we do.
+            </p>
+          </div>
         </div>
 
         {/* OUR COMMITMENT */}

@@ -41,7 +41,7 @@ export default function Gallery() {
       desc: "Watching the giant envelope come alive"
     },
     {
-      src: "/Fotos melhores /Imagem 23-07-2026 às 19.54.jpg",
+      src: "/Fotos melhores /Imagem 23-07-2026 às 19.54.jpg",
       alt: "Elegant table setup",
       cat: "lounge",
       title: "Sunrise Lounge Setup",
@@ -83,14 +83,14 @@ export default function Gallery() {
       desc: "Fully-catered, warm gourmet breakfast"
     },
     {
-      src: "/Fotos melhores /Imagem 23-07-2026 às 19.53.jpg",
+      src: "/Fotos melhores /Imagem 23-07-2026 às 19.53.jpg",
       alt: "Champagne toast",
       cat: "celebrations",
       title: "The Aeronaut's Toast",
       desc: "Premium French champagne post-landing"
     },
     {
-      src: "/Fotos melhores /Imagem 23-07-2026 às 19.52.jpg",
+      src: "/Fotos melhores /Imagem 23-07-2026 às 19.52.jpg",
       alt: "Couples celebration",
       cat: "celebrations",
       title: "Intimate Milestones",
@@ -151,11 +151,11 @@ export default function Gallery() {
         </div>
 
         {/* MASONRY/GRID */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2">
           {filteredItems.map((item, idx) => (
             <div 
               key={idx} 
-              className="group relative h-[400px] rounded-[2rem] overflow-hidden border border-black/5 shadow-sm hover:shadow-xl transition-all duration-500 hover:scale-[1.01]"
+              className="group relative h-[400px] rounded-none overflow-hidden border border-black/5 shadow-sm hover:shadow-xl transition-all duration-500 hover:scale-[1.01]"
             >
               <img 
                 src={item.src} 

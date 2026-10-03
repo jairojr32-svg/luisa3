@@ -3,27 +3,35 @@ export default function Sustainability() {
     <div className="min-h-screen w-full bg-[#f8f9fa]/75 backdrop-blur-md text-black py-24 md:py-40 px-5 xs:px-6 sm:px-12 md:px-24 transition-all duration-500">
       <div className="max-w-7xl mx-auto space-y-36">
         
-        {/* HERO SECTION */}
-        <div className="space-y-16">
-          <div className="text-center max-w-4xl mx-auto space-y-8">
+        {/* HERO SECTION with Background */}
+        <div className="relative text-center flex items-center justify-center min-h-[70vh] py-24 md:py-32">
+          <div className="absolute inset-0 z-0">
+            <img 
+              src="/1 - SALAR/AdobeStock_910682930.jpeg" 
+              alt="Salar de Uyuni Landscape" 
+              className="w-full h-full object-cover"
+            />
+            <div className="absolute inset-0 bg-black/20" />
+          </div>
+          <div className="relative z-10 max-w-4xl mx-auto space-y-8 px-5">
             <div className="flex flex-col items-center space-y-3">
-              <div className="flex items-center space-x-3 text-[9px] font-mono tracking-[0.3em] text-black/35 select-none pointer-events-none">
+              <div className="flex items-center space-x-3 text-[9px] font-mono tracking-[0.3em] text-white/70 select-none pointer-events-none">
                 <span>( 05 // 06 )</span>
-                <span className="w-8 h-[1px] bg-black/15"></span>
+                <span className="w-8 h-[1px] bg-white/20"></span>
                 <span>PRESERVATION & LEGACY</span>
               </div>
-              <span className="text-[9px] font-bold uppercase tracking-[0.4em] text-[#c5a880] font-sans">
+              <span className="text-[9px] font-bold uppercase tracking-[0.4em] text-white font-sans">
                 20°11'52"S 67°28'30"W • ALTITUDE 3,656M
               </span>
             </div>
             
-            <h1 className="font-serif text-3xl xs:text-4xl sm:text-5xl md:text-7xl text-[#111] uppercase font-light leading-tight tracking-tight">
+            <h1 className="font-serif text-3xl xs:text-4xl sm:text-5xl md:text-7xl text-white uppercase font-light leading-tight tracking-tight">
               Protecting What Makes <br />
-              <span className="font-serif italic font-normal text-black/50">Salar de Uyuni</span> <br />
+              <span className="font-serif italic font-normal text-white/80">Salar de Uyuni</span> <br />
               Extraordinary
             </h1>
             
-            <p className="text-black/60 text-xs md:text-sm leading-relaxed max-w-2xl mx-auto font-light">
+            <p className="text-white/80 text-xs md:text-sm leading-relaxed max-w-2xl mx-auto font-light">
               We believe extraordinary places deserve to be celebrated and protected. Our mission is to create once-in-a-lifetime journeys in perfect harmony with the landscape, local communities, and heritage that define this unique place on Earth.
             </p>
           </div>

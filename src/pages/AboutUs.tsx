@@ -1,58 +1,63 @@
 export default function AboutUs() {
   return (
-    <div className="min-h-screen w-full bg-[#f8f9fa]/75 backdrop-blur-md text-black py-24 md:py-40 px-5 xs:px-6 sm:px-12 md:px-24 transition-all duration-500">
+    <div className="min-h-screen w-full bg-[#f8f9fa]/75 backdrop-blur-md text-black transition-all duration-500">
       <div className="max-w-7xl mx-auto space-y-32">
         
-        {/* HERO SECTION */}
-        <div className="text-center max-w-4xl mx-auto space-y-8">
-          <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-black/40">ABOUT US</span>
-          <h1 className="font-serif text-3xl xs:text-4xl sm:text-5xl md:text-7xl text-[#111] uppercase font-medium leading-tight">
-            Born from a Dream That Once Felt Impossible
-          </h1>
-          <p className="text-[#555] text-sm md:text-base leading-relaxed max-w-2xl mx-auto">
-            A dream more than a decade in the making — to create the most extraordinary balloon experience on Earth in one of the world’s most iconic landscapes.
-          </p>
-        </div>
-
-        {/* IMAGE SPLIT / OUR STORY */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
-          <div className="lg:col-span-6 h-[450px] md:h-[600px] rounded-[2rem] overflow-hidden shadow-lg border border-black/5">
+        {/* HERO SECTION with Background */}
+        <div className="relative pt-48 pb-32 md:pt-64 md:pb-48 text-center px-5 xs:px-6 sm:px-12 md:px-24 flex items-center justify-center min-h-[70vh]">
+          <div className="absolute inset-0 z-0">
             <img 
-              src="/Fotos melhores /ps1.jpg" 
-              alt="The Dream Above the Flats" 
+              src="/1 - SALAR/AdobeStock_1843285687.jpeg" 
+              alt="Salar de Uyuni Balloons" 
               className="w-full h-full object-cover"
             />
+            <div className="absolute inset-0 bg-black/30" />
           </div>
-          <div className="lg:col-span-6 space-y-8">
-            <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-black">OUR STORY</span>
-            <h2 className="font-serif text-3xl md:text-5xl text-[#111] uppercase leading-tight">
-              The Story Behind Salar Balloons
-            </h2>
-            <div className="text-xs md:text-sm text-[#555] space-y-6 leading-relaxed">
-              <p>
-                Salar Balloons was born from a dream that, for many years, seemed almost impossible.
-              </p>
-              <p>
-                For more than a decade, one vision lived in our minds: to create the most extraordinary hot air balloon experience in the world, set above one of the planet’s most breathtaking and iconic landscapes — Salar de Uyuni.
-              </p>
-              <p className="font-serif text-lg md:text-xl italic text-black/80 my-8 py-4 border-y border-black/5">
-                “Magic happens.”
-              </p>
-              <p>
-                Because, time and time again, magic truly did happen — through the right people, impossible opportunities, and moments that reminded us this dream was meant to exist.
-              </p>
-              <p>
-                Today, that dream becomes reality. Salar Balloons was created with one clear mission: to offer unforgettable experiences designed with extraordinary care, where every detail has been thoughtfully crafted to create one of the finest balloon journeys in the world.
-              </p>
-              <p>
-                More than offering flights, we aspire to create lifelong memories in one of the most awe-inspiring places on Earth.
-              </p>
+          <div className="relative z-10 max-w-4xl mx-auto space-y-8">
+            <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-white/60">ABOUT US</span>
+            <h1 className="font-serif text-3xl xs:text-4xl sm:text-5xl md:text-7xl text-white uppercase font-medium leading-tight">
+              Born from a Dream That Once Felt Impossible
+            </h1>
+            <p className="text-white/90 text-sm md:text-base leading-relaxed max-w-2xl mx-auto">
+              A dream more than a decade in the making — to create the most extraordinary balloon experience on Earth in one of the world’s most iconic landscapes.
+            </p>
+          </div>
+        </div>
+
+        {/* OUR STORY */}
+        <div className="px-5 xs:px-6 sm:px-12 md:px-24 py-12 md:py-24">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
+            <div className="lg:col-span-8 lg:col-start-3 space-y-8 text-center">
+              <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-black">OUR STORY</span>
+              <h2 className="font-serif text-3xl md:text-5xl text-[#111] uppercase leading-tight">
+                The Story Behind Salar Balloons
+              </h2>
+              <div className="text-xs md:text-sm text-[#555] space-y-6 leading-relaxed max-w-3xl mx-auto">
+                <p>
+                  Salar Balloons was born from a dream that, for many years, seemed almost impossible.
+                </p>
+                <p>
+                  For more than a decade, one vision lived in our minds: to create the most extraordinary hot air balloon experience in the world, set above one of the planet’s most breathtaking and iconic landscapes — Salar de Uyuni.
+                </p>
+                <p className="font-serif text-lg md:text-xl italic text-black/80 my-8 py-4 border-y border-black/5">
+                  “Magic happens.”
+                </p>
+                <p>
+                  Because, time and time again, magic truly did happen — through the right people, impossible opportunities, and moments that reminded us this dream was meant to exist.
+                </p>
+                <p>
+                  Today, that dream becomes reality. Salar Balloons was created with one clear mission: to offer unforgettable experiences designed with extraordinary care, where every detail has been thoughtfully crafted to create one of the finest balloon journeys in the world.
+                </p>
+                <p>
+                  More than offering flights, we aspire to create lifelong memories in one of the most awe-inspiring places on Earth.
+                </p>
+              </div>
             </div>
           </div>
         </div>
-
+        
         {/* MISSION & LEGACY */}
-        <div className="border-t border-black/10 pt-24 grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
+        <div className="px-5 xs:px-6 sm:px-12 md:px-24 border-t border-black/10 pt-24 grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
           <div className="lg:col-span-4 space-y-4">
             <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-black">OUR PURPOSE</span>
             <h2 className="font-serif text-3xl md:text-4xl text-[#111] uppercase leading-tight">
@@ -76,7 +81,7 @@ export default function AboutUs() {
         </div>
 
         {/* MEET THE TEAM */}
-        <div className="border-t border-black/10 pt-24 space-y-16">
+        <div className="px-5 xs:px-6 sm:px-12 md:px-24 border-t border-black/10 pt-24 space-y-16">
           <div className="text-center space-y-4">
             <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-black/40">FOUNDERS & PARTNERS</span>
             <h2 className="font-serif text-2xl xs:text-3xl sm:text-4xl md:text-5xl text-[#111] uppercase">The People Behind the Dream</h2>
@@ -97,38 +102,38 @@ export default function AboutUs() {
                   Luiza Ferrari is a Brazilian skydiver, extreme sports multi-athlete, explorer, and specialist in extraordinary projects in remote and exotic locations.
                 </p>
                 <p className="text-xs text-[#555] leading-relaxed">
-                  With years of experience in ballooning, adventure expeditions, and high-complexity operations, Luísa envisioned Salar Balloons as the realization of a long-held dream: to create the most spectacular balloon experience in the world. Driven by passion, she helped bring to life a project once considered nearly impossible.
+                  With years of experience in ballooning, adventure expeditions, and high-complexity operations, Luiza envisioned Salar Balloons as the realization of a long-held dream: to create the most spectacular balloon experience in the world. Driven by passion, she helped bring to life a project once considered nearly impossible.
                 </p>
               </div>
             </div>
 
-            {/* MARCO ANTONIO */}
+            {/* MARCO ANTONIO RODRIGUES */}
             <div className="border border-black/5 rounded-[2rem] p-6 xs:p-8 md:p-12 bg-white/40 hover:border-black/20 transition-all space-y-6 flex flex-col md:flex-row gap-6 md:gap-8 items-center md:items-start text-center md:text-left">
               <div className="w-32 h-32 md:w-44 md:h-44 rounded-full overflow-hidden shrink-0 border border-black/5 mx-auto md:mx-0">
-                <img src="/Fotos melhores /MARCO_ANTONIO_RODRIGUES.PNG" alt="Marco Antônio" className="w-full h-full object-cover" />
+                <img src="/Fotos melhores /MARCO_ANTONIO_RODRIGUES.PNG" alt="Marco Antônio Rodrigues" className="w-full h-full object-cover" />
               </div>
               <div className="space-y-4">
                 <div>
-                  <h3 className="font-serif text-xl uppercase font-semibold text-black">Marco Antônio</h3>
+                  <h3 className="font-serif text-xl uppercase font-semibold text-black">Marco Antônio Rodrigues</h3>
                   <span className="text-[10px] font-bold uppercase tracking-wider text-black">Co-Founder</span>
                 </div>
                 <p className="text-xs text-[#555] leading-relaxed">
-                  Brazilian entrepreneur and co-creator of Salar Balloons, Marco Antônio believed in the vision from the beginning and played an essential role in transforming an ambitious dream into reality.
+                  Marco Antonio is a Brazilian entrepreneur active in different sectors and co-founder of Salar Balloons. He believed in the project from the beginning and played a key role in turning an ambitious vision into reality.
                 </p>
                 <p className="text-xs text-[#555] leading-relaxed">
-                  His dedication and partnership helped make one of the most extraordinary tourism projects in Bolivia possible.
+                  His entrepreneurial experience, dedication, and close collaboration with his partners helped make one of the most extraordinary tourism projects in Bolivia possible.
                 </p>
               </div>
             </div>
 
-            {/* JUAN GABRIEL */}
+            {/* JUAN GABRIEL QUESADA */}
             <div className="border border-black/5 rounded-[2rem] p-6 xs:p-8 md:p-12 bg-white/40 hover:border-black/20 transition-all space-y-6 flex flex-col md:flex-row gap-6 md:gap-8 items-center md:items-start text-center md:text-left">
               <div className="w-32 h-32 md:w-44 md:h-44 rounded-full overflow-hidden shrink-0 border border-black/5 mx-auto md:mx-0">
-                <img src="/Fotos melhores /JUAN_GABRIEL_QUESADA.PNG" alt="Juan Gabriel" className="w-full h-full object-cover" />
+                <img src="/Fotos melhores /JUAN_GABRIEL_QUESADA.PNG" alt="Juan Gabriel Quesada" className="w-full h-full object-cover" />
               </div>
               <div className="space-y-4">
                 <div>
-                  <h3 className="font-serif text-xl uppercase font-semibold text-black">Juan Gabriel</h3>
+                  <h3 className="font-serif text-xl uppercase font-semibold text-black">Juan Gabriel Quesada</h3>
                   <span className="text-[10px] font-bold uppercase tracking-wider text-black">Local Partner</span>
                 </div>
                 <p className="text-xs text-[#555] leading-relaxed">
@@ -162,7 +167,7 @@ export default function AboutUs() {
         </div>
 
         {/* FINAL SECTION */}
-        <div className="border-t border-black/10 pt-24 text-center max-w-3xl mx-auto space-y-8">
+        <div className="px-5 xs:px-6 sm:px-12 md:px-24 border-t border-black/10 pt-24 text-center max-w-3xl mx-auto space-y-8">
           <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-black">A DREAM REALIZED</span>
           <h2 className="font-serif text-3xl md:text-5xl text-[#111] uppercase leading-tight">
             More Than a Company. A Dream Brought to Life.

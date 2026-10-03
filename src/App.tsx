@@ -1152,7 +1152,7 @@ export default function App() {
               <div className="lg:col-span-5 relative">
                 <div className="arched-card rounded-none w-full max-w-[450px] aspect-square mx-auto overflow-hidden border border-black/5 shadow-[0_12px_40px_rgba(0,0,0,0.015)] relative group">
                   <img 
-                    src="/Fotos melhores /ps2.jpg" 
+                    src="/Fotos melhores /Imagem 23-07-2026 às 19.54.jpg" 
                     alt="Luxury Hotel Lobby" 
                     className="w-full h-full object-cover rounded-none scale-100 group-hover:scale-105 transition-transform duration-[1200ms] ease-out"
                   />
@@ -1165,7 +1165,7 @@ export default function App() {
                 <div className="border-l border-black/5 pl-8 space-y-12">
                   {[
                     { num: "01", title: "Luxury Hotel Pickup", desc: "Private, seamless premium transfers straight from your hotel or luxury accommodation directly to the launch site." },
-                    { num: "02", title: "Sunrise Lounge & Hot Drinks", desc: "Warm up with curated herbal infusions, fresh coffee, and gourmet pastries as dawn breaks." }
+                    { num: "02", title: "Sunrise Lounge & Warm Drinks", desc: "Warm up with curated herbal infusions, warm drinks, and gourmet bites served in the heart of the Uyuni Salt Flats." }
                   ].map((step, idx) => (
                     <div key={idx} className="timeline-item relative group cursor-pointer transition-all duration-500">
                       <div className="absolute -left-[36px] top-2 w-1.5 h-1.5 rounded-full bg-black/15 group-hover:bg-[#c5a880] group-hover:scale-125 transition-all duration-500" />
@@ -1224,7 +1224,7 @@ export default function App() {
               <div className="lg:col-span-5 relative">
                 <div className="arched-card rounded-none w-full max-w-[450px] aspect-square mx-auto overflow-hidden border border-black/5 shadow-[0_12px_40px_rgba(0,0,0,0.015)] relative group">
                   <img 
-                    src="/Fotos melhores /Imagem 23-07-2026 às 19.54.jpg" 
+                    src="/Fotos melhores /ps2.jpg" 
                     alt="Luxury Breakfast" 
                     className="w-full h-full object-cover rounded-none scale-100 group-hover:scale-105 transition-transform duration-[1200ms] ease-out"
                   />
@@ -1237,7 +1237,7 @@ export default function App() {
                 <div className="border-l border-black/5 pl-8 space-y-12">
                   {[
                     { num: "05", title: "Champagne Celebration", desc: "A traditional high-altitude aeronautical toast on the salt flats with premium French champagne." },
-                    { num: "06", title: "Premium Breakfast on the Salt", desc: "Savor a fully-catered, private breakfast styled elegantly in the middle of the breathtaking white salt desert." }
+                    { num: "06", title: "Premium Breakfast at Palacio de Sal", desc: "Enjoy a fully catered, private breakfast at the iconic Hotel Palacio de Sal, surrounded by the breathtaking landscapes of the Uyuni Salt Flats." }
                   ].map((step, idx) => (
                     <div key={idx} className="timeline-item relative group cursor-pointer transition-all duration-500">
                       <div className="absolute -left-[36px] top-2 w-1.5 h-1.5 rounded-full bg-black/15 group-hover:bg-[#c5a880] group-hover:scale-125 transition-all duration-500" />
@@ -1251,7 +1251,12 @@ export default function App() {
                 </div>
 
                 <div className="pt-8 pl-8">
-                  <a href="#voos" className="inline-block px-10 py-4 border border-black text-black bg-transparent rounded-full text-[10px] font-semibold tracking-[0.25em] uppercase hover:bg-black hover:text-white transition-all duration-500 cubic-bezier(0.16, 1, 0.3, 1)">
+                  <a 
+                    href="https://wa.me/5531982352679"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-block px-10 py-4 border border-black text-black bg-transparent rounded-full text-[10px] font-semibold tracking-[0.25em] uppercase hover:bg-black hover:text-white transition-all duration-500 cubic-bezier(0.16, 1, 0.3, 1)"
+                  >
                     Book Your Experience
                   </a>
                 </div>
@@ -1319,40 +1324,47 @@ export default function App() {
               </p>
             </div>
 
-            {/* Grid de Cards de Luxo (Glassmorphism sutil para dialogar com o 3D) */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {/* Grid de Cards de Luxo Retangulares e Maiores */}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {[
                 { 
                   num: "01", 
                   title: "Luxury Flight", 
                   desc: "Perfect for couples or small families. Premium private compartments, champagne toast, and beautifully catered hot breakfast on the white flats.",
                   cta: "Discover Luxury",
-                  bg: "/1 - SALAR/7E66BD85-1EED-4B07-8516-32FA296B5FF1_2.PNG"
+                  bg: "/1 - SALAR/7E66BD85-1EED-4B07-8516-32FA296B5FF1_2.PNG",
+                  link: "#luxury-flight"
                 },
                 { 
                   num: "02", 
                   title: "Exclusive Flight", 
                   desc: "The entire hot air balloon reserved exclusively for you and your guests. Fully customized gourmet menu, bespoke launch coordinates, and direct butler service.",
                   cta: "Explore Exclusive",
-                  bg: "/1 - SALAR/61C18353-D6D0-405D-A480-732F1B14FAF8.PNG"
+                  bg: "/1 - SALAR/61C18353-D6D0-405D-A480-732F1B14FAF8.PNG",
+                  link: "#exclusive-flight"
                 },
                 { 
                   num: "03", 
                   title: "Special Locations", 
                   desc: "Secret takeoffs from remote Andean volcanic fields, available on highly restricted dates for seasoned world-travelers seeking ultimate rarity.",
                   cta: "View Locations",
-                  bg: "/1 - SALAR/2D6A17FC-C073-4365-8E61-27C6D6B3BC66_2.PNG"
+                  bg: "/1 - SALAR/2D6A17FC-C073-4365-8E61-27C6D6B3BC66_2.PNG",
+                  link: "#special-locations"
                 }
-              ].map((card, idx) => (
-                <div key={idx} className="exp-card rounded-none aspect-square pb-8 border border-white/10 p-6 xs:p-8 flex flex-col justify-between relative overflow-hidden group hover:scale-[1.01] transition-all duration-500 shadow-[0_12px_40px_rgba(0,0,0,0.12)]">
-                  {/* Background Image */}
+              ].map((card) => (
+                <a 
+                  key={card.num}
+                  href={card.link}
+                  className="exp-card block rounded-none h-[70vh] max-h-[600px] pb-8 border border-white/10 p-6 xs:p-8 flex flex-col justify-between relative overflow-hidden group hover:scale-[1.01] transition-all duration-500 shadow-[0_12px_40px_rgba(0,0,0,0.12)]"
+                >
+                  {/* Background Image com Efeito Hover */}
                   <img 
                     src={card.bg} 
                     alt={card.title} 
-                    className="absolute inset-0 w-full h-full object-cover rounded-none group-hover:scale-105 transition-transform duration-[1200ms] ease-out -z-20" 
+                    className="absolute inset-0 w-full h-full object-cover rounded-none group-hover:scale-105 group-hover:brightness-110 transition-all duration-[1200ms] ease-out -z-20" 
                   />
-                  {/* Dark overlay for perfect legibility */}
-                  <div className="absolute inset-0 bg-black/45 group-hover:bg-black/50 transition-colors duration-500 -z-10" />
+                  {/* Overlay Escuro que Clareia no Hover */}
+                  <div className="absolute inset-0 bg-black/45 group-hover:bg-black/30 transition-colors duration-500 -z-10" />
 
                   <div className="space-y-6 relative z-10">
                     <div className="flex justify-between items-center border-b border-white/10 pb-4">
@@ -1362,12 +1374,13 @@ export default function App() {
                     <h3 className="font-serif text-2xl text-white font-light uppercase tracking-tight">{card.title}</h3>
                     <p className="text-[12px] text-white/80 leading-relaxed font-light">{card.desc}</p>
                   </div>
-                  <div className="relative z-10">
-                    <button className="w-full py-3.5 border border-white text-white bg-transparent rounded-full text-[9px] font-semibold tracking-[0.25em] uppercase hover:bg-white hover:text-black transition-all duration-500 cubic-bezier(0.16, 1, 0.3, 1)">
+                  
+                  <div className="relative z-10 mt-auto">
+                    <div className="w-full text-center py-3.5 border border-white text-white bg-transparent rounded-full text-[9px] font-semibold tracking-[0.25em] uppercase group-hover:bg-white group-hover:text-black transition-all duration-500 cubic-bezier(0.16, 1, 0.3, 1)">
                       {card.cta}
-                    </button>
+                    </div>
                   </div>
-                </div>
+                </a>
               ))}
             </div>
 
@@ -1555,7 +1568,7 @@ export default function App() {
         ) : (
           <div className="relative z-20 w-full bg-[#f8f9fa]/75 backdrop-blur-md">
             {/* SUBPAGE HEADER */}
-            <header className="fixed top-0 left-0 w-full px-5 py-4 xs:p-6 md:p-8 flex justify-between items-center z-50 bg-[#f8f9fa]/85 backdrop-blur-md border-b border-black/5 text-black">
+            <header className="fixed top-0 left-0 w-full px-5 py-4 xs:p-6 md:p-8 flex justify-between items-center z-50 bg-[#f8f9fa]/85 backdrop-blur-md text-black">
               <div className="cursor-pointer" onClick={() => { window.location.hash = '#home'; setIsMobileMenuOpen(false); }}>
                 <img src="/Negative Salar Balloons Arc.png" alt="Salar Balloons Logo" className="h-14 sm:h-20 md:h-28 w-auto object-contain filter brightness-0" />
               </div>
