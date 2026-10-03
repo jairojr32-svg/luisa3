@@ -13,9 +13,14 @@ export default function LuxuryFlight() {
             An ultra-premium shared balloon experience designed for travelers who seek comfort, exclusivity, and breathtaking views above Salar de Uyuni.
           </p>
           <div className="pt-4">
-            <a href="#contact" className="inline-block px-10 py-4 bg-black text-white rounded-full text-xs font-bold tracking-widest uppercase hover:bg-[#ffab40] hover:text-black transition-colors">
-              Reserve Your Flight
-            </a>
+            <a 
+  href="https://wa.me/5531982352679"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="inline-block px-10 py-4 bg-black text-white rounded-full text-xs font-bold tracking-widest uppercase hover:bg-[#ffab40] hover:text-black transition-colors"
+>
+  Reserve Your Flight
+</a>
           </div>
         </div>
 
@@ -117,9 +122,14 @@ export default function LuxuryFlight() {
             Experience Salar de Uyuni in Extraordinary Comfort
           </h2>
           <div className="pt-4">
-            <a href="#contact" className="inline-block px-12 py-5 bg-black text-white rounded-full text-xs font-bold tracking-widest uppercase hover:bg-[#ffab40] hover:text-black transition-all shadow-md">
-              Book Luxury Flight
-            </a>
+            <a 
+  href="https://wa.me/5531982352679"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="inline-block px-12 py-5 bg-black text-white rounded-full text-xs font-bold tracking-widest uppercase hover:bg-[#ffab40] hover:text-black transition-all shadow-md"
+>
+  Book Luxury Flight
+</a>
           </div>
         </div>
 

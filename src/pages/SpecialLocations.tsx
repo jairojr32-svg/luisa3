@@ -13,9 +13,14 @@ export default function SpecialLocations() {
             A collection of exclusive balloon journeys taking place in carefully selected extraordinary locations and limited dates.
           </p>
           <div className="pt-4">
-            <a href="#contact" className="inline-block px-10 py-4 bg-black text-white rounded-full text-xs font-bold tracking-widest uppercase hover:bg-[#ffab40] hover:text-black transition-colors">
-              Explore Upcoming Flights
-            </a>
+            <a 
+  href="https://wa.me/5531982352679"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="inline-block px-10 py-4 bg-black text-white rounded-full text-xs font-bold tracking-widest uppercase hover:bg-[#ffab40] hover:text-black transition-colors"
+>
+  Explore Upcoming Flights
+</a>
           </div>
         </div>
 
@@ -94,9 +99,14 @@ export default function SpecialLocations() {
             Discover Extraordinary Places Few Will Ever See
           </h2>
           <div className="pt-4">
-            <a href="#contact" className="inline-block px-12 py-5 bg-black text-white rounded-full text-xs font-bold tracking-widest uppercase hover:bg-[#ffab40] hover:text-black transition-all shadow-md">
-              View Available Experiences
-            </a>
+            <a 
+  href="https://wa.me/5531982352679"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="inline-block px-12 py-5 bg-black text-white rounded-full text-xs font-bold tracking-widest uppercase hover:bg-[#ffab40] hover:text-black transition-all shadow-md"
+>
+  View Available Experiences
+</a>
           </div>
         </div>
 

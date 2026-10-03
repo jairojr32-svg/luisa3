@@ -13,9 +13,14 @@ export default function ExclusiveFlight() {
             A fully private balloon experience designed exclusively for you and your guests above the breathtaking landscapes of Salar de Uyuni.
           </p>
           <div className="pt-4">
-            <a href="#contact" className="inline-block px-10 py-4 bg-black text-white rounded-full text-xs font-bold tracking-widest uppercase hover:bg-[#ffab40] hover:text-black transition-colors">
-              Reserve Exclusive Flight
-            </a>
+            <a 
+  href="https://wa.me/5531982352679"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="inline-block px-10 py-4 bg-black text-white rounded-full text-xs font-bold tracking-widest uppercase hover:bg-[#ffab40] hover:text-black transition-colors"
+>
+  Reserve Exclusive Flight
+</a>
           </div>
         </div>
 
@@ -106,9 +111,14 @@ export default function ExclusiveFlight() {
             Create a Once-in-a-Lifetime Private Experience
           </h2>
           <div className="pt-4">
-            <a href="#contact" className="inline-block px-12 py-5 bg-black text-white rounded-full text-xs font-bold tracking-widest uppercase hover:bg-[#ffab40] hover:text-black transition-all shadow-md">
-              Book Exclusive Flight
-            </a>
+            <a 
+  href="https://wa.me/5531982352679"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="inline-block px-12 py-5 bg-black text-white rounded-full text-xs font-bold tracking-widest uppercase hover:bg-[#ffab40] hover:text-black transition-all shadow-md"
+>
+  Book Exclusive Flight
+</a>
           </div>
         </div>
 

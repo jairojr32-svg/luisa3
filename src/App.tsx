@@ -1577,17 +1577,31 @@ export default function App() {
               <div className="cursor-pointer" onClick={() => { window.location.hash = '#home'; setIsMobileMenuOpen(false); }}>
                 <img src="/Negative Salar Balloons Arc.png" alt="Salar Balloons Logo" className="h-14 sm:h-20 md:h-28 w-auto object-contain filter brightness-0" />
               </div>
-              <nav className="hidden md:flex space-x-8 text-[10px] font-bold tracking-[0.2em] uppercase">
+              <nav className="hidden md:flex space-x-8 text-[10px] font-bold tracking-[0.2em] uppercase items-center">
                 <a href="#home" className="hover:text-black transition-colors">Home</a>
-                <a href="#experience" className="hover:text-black transition-colors">Experience</a>
+                <div className="relative group">
+                  <a href="#experience" className="hover:text-black transition-colors">Experience</a>
+                  <div className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-64 bg-white/90 backdrop-blur-md rounded-md shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none group-hover:pointer-events-auto">
+                    <div className="p-4 space-y-3">
+                      <a href="#luxury-flight" className="block px-4 py-2 text-xs text-black/70 hover:bg-black/5 hover:text-black rounded-sm transition-colors">Luxury Flight</a>
+                      <a href="#exclusive-flight" className="block px-4 py-2 text-xs text-black/70 hover:bg-black/5 hover:text-black rounded-sm transition-colors">Exclusive Flight</a>
+                      <a href="#special-locations" className="block px-4 py-2 text-xs text-black/70 hover:bg-black/5 hover:text-black rounded-sm transition-colors">Special Locations</a>
+                    </div>
+                  </div>
+                </div>
                 <a href="#about" className="hover:text-black transition-colors">About Us</a>
                 <a href="#sustainability" className="hover:text-black transition-colors">Sustainability</a>
                 <a href="#safety" className="hover:text-black transition-colors">Safety</a>
                 <a href="#faq" className="hover:text-black transition-colors">FAQ</a>
                 <a href="#gallery" className="hover:text-black transition-colors">Gallery</a>
               </nav>
-              <a href="#contact" className="hidden md:inline-block text-[10px] font-bold tracking-[0.2em] border border-black/20 px-6 py-2 rounded-full cursor-pointer hover:bg-black hover:text-white transition-colors uppercase">
-                Book
+              <a 
+                href="https://wa.me/5531982352679"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hidden md:inline-block text-[10px] font-bold tracking-[0.2em] border border-black/20 px-6 py-2 rounded-full cursor-pointer hover:bg-black hover:text-white transition-colors uppercase"
+              >
+                Book Your Flight
               </a>
 
               {/* Hamburger Button for Mobile Subpages */}
