@@ -60,8 +60,8 @@ export const generateSaltNormalMap = (): THREE.CanvasTexture => {
 // =========================================
 export const generateBalloonAlbedoMap = (): THREE.CanvasTexture => {
   const canvas = document.createElement('canvas');
-  canvas.width = 4096; // 4K para nitidez absoluta
-  canvas.height = 4096;
+  canvas.width = 2048;
+  canvas.height = 2048;
   const ctx = canvas.getContext('2d');
   
   if (ctx) {
@@ -184,8 +184,8 @@ export const generateBalloonAlbedoMap = (): THREE.CanvasTexture => {
 // =========================================
 export const generateBalloonBumpMap = (): THREE.CanvasTexture => {
   const canvas = document.createElement('canvas');
-  canvas.width = 4096; // Resolução massiva para a trama do tecido
-  canvas.height = 4096;
+  canvas.width = 2048;
+  canvas.height = 2048;
   const ctx = canvas.getContext('2d');
   
   if (ctx) {
