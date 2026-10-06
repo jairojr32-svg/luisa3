@@ -382,8 +382,8 @@ function InfiniteSaltFlat() {
       <planeGeometry args={[140, 140]} />
       <MeshReflectorMaterial
         blur={[0, 0]}
-        resolution={256}
-        mixBlur={0}
+        resolution={128}
+        mixBlur={0.25}
         mixStrength={1.5} // Corrigido de 45 para 1.5! Elimina completamente o estouro arco-íris
         roughness={0.12} // Água suave sobre as placas de sal
         depthScale={1.2}
@@ -674,15 +674,15 @@ export default function App() {
     return () => window.removeEventListener('resize', handleResize);
   }, [currentPage]);
 
+  const [isFrameDirty, setIsFrameDirty] = useState(false);
+
   useLenis(({ progress, scroll }) => {
     if (currentPage === 'home') {
       const heroHeight = window.innerHeight * 2;
       const scrollProgress = Math.min(scroll / heroHeight, 1);
       scrollProgressRef.current = scrollProgress;
-
-      // Renderização instantânea do frame correspondente
-      const frameIndex = Math.min(Math.floor(scrollProgress * 299), 299);
-      drawFrame(frameIndex);
+      
+      setIsFrameDirty(true);
 
       // Otimização de Performance
       if (scroll > heroHeight) {
@@ -721,6 +721,24 @@ export default function App() {
       }
     }
   });
+
+  useEffect(() => {
+    if (!isFrameDirty) return;
+
+    const frameIndex = Math.min(Math.floor(scrollProgressRef.current * 299), 299);
+    
+    let rafId: number;
+    const updateFrame = () => {
+      drawFrame(frameIndex);
+      setIsFrameDirty(false);
+    };
+
+    rafId = requestAnimationFrame(updateFrame);
+
+    return () => {
+      cancelAnimationFrame(rafId);
+    };
+  }, [isFrameDirty]);
 
   useLayoutEffect(() => {
     if (currentPage !== 'home') return;
@@ -977,7 +995,7 @@ export default function App() {
           
           {/* Luz PBR: Ambiente sutilmente quente e luz direcional dourada intensa vinda diretamente de trás das montanhas */}
           <ambientLight intensity={0.28} color="#ffebd1" />
-          <directionalLight position={[18, 2.2, -45]} intensity={7.5} color="#ff7d45" castShadow shadow-mapSize={[2048, 2048]} shadow-bias={-0.0001} />
+          <directionalLight position={[18, 2.2, -45]} intensity={7.5} color="#ff7d45" castShadow shadow-mapSize={[1024, 1024]} shadow-bias={-0.0001} />
           
           {/* Simulação física da atmosfera (Pôr do Sol Avermelhado espetacular no deserto) */}
           <Sky 
