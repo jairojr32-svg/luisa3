@@ -28,8 +28,8 @@ export default function Contact() {
   };
 
   return (
-    <div className="min-h-screen w-full bg-[#f8f9fa]/75 backdrop-blur-md text-black py-24 md:py-40 px-5 xs:px-6 sm:px-12 md:px-24 transition-all duration-500">
-      <div className="max-w-7xl mx-auto space-y-32">
+    <div className="min-h-screen w-full bg-[#f8f9fa]/75 backdrop-blur-md text-black px-5 xs:px-6 sm:px-12 md:px-24 transition-all duration-500">
+      <div className="max-w-7xl mx-auto space-y-32 pt-24 md:pt-40">
         
         {/* HERO SECTION */}
         <div className="text-center max-w-4xl mx-auto space-y-8">
@@ -211,8 +211,8 @@ export default function Contact() {
                 <span className="text-2xl shrink-0">💬</span>
                 <div className="space-y-1">
                   <span className="text-[9px] font-bold uppercase tracking-widest text-black/40 block">WHATSAPP CONCIERGE</span>
-                  <a href="https://wa.me/5511999999999" target="_blank" rel="noreferrer" className="font-sans font-semibold text-sm md:text-base text-black hover:text-black transition-colors">
-                    +55 11 99999-9999
+                  <a href="https://wa.me/5531982352679" target="_blank" rel="noreferrer" className="font-sans font-semibold text-sm md:text-base text-black hover:text-black transition-colors">
+                    +55 31 98235 2679
                   </a>
                 </div>
               </div>

@@ -1026,9 +1026,10 @@ export default function App() {
                 <a href="#safety" className="hover:text-[#c5a880] transition-colors duration-500 ease-out">Safety Standard</a>
                 <a href="#faq" className="hover:text-[#c5a880] transition-colors duration-500 ease-out">FAQ</a>
                 <a href="#gallery" className="hover:text-[#c5a880] transition-colors duration-500 ease-out">Gallery</a>
+                <a href="#contact" className="hover:text-[#c5a880] transition-colors duration-500 ease-out">Contact</a>
               </nav>
-              <a href="#contact" className="hidden md:inline-block text-[9px] font-semibold tracking-[0.25em] border border-white/10 px-6 py-2.5 rounded-full cursor-pointer hover:border-white hover:bg-white hover:text-black transition-all duration-500 cubic-bezier(0.16, 1, 0.3, 1) uppercase">
-                RESERVAR
+              <a href="https://wa.me/5531982352679" target="_blank" rel="noopener noreferrer" className="hidden md:inline-block text-[9px] font-semibold tracking-[0.25em] border border-white/10 px-6 py-2.5 rounded-full cursor-pointer hover:border-white hover:bg-white hover:text-black transition-all duration-500 cubic-bezier(0.16, 1, 0.3, 1) uppercase">
+                Book Your Flight
               </a>
 
               {/* Hamburger Button for Mobile */}
@@ -1067,54 +1068,59 @@ export default function App() {
         {/* CENA 2: INTRODUÇÃO EDITORIAL (Abaixo do Balão 3D, Fundo Off-White) */}
         <section id="experiencia" className="relative z-30 w-full bg-[#fcfbf7] pt-32 pb-32">
           
-          <div ref={whiteSectionRef} className="min-h-screen flex flex-col justify-center items-center px-6 md:px-24 text-center relative">
+          <div ref={whiteSectionRef} className="min-h-screen flex flex-col justify-center items-center px-6 md:px-24 text-center relative overflow-hidden">
             
-            {/* Index Counter and Coordinate Stamp */}
-            <div className="flex flex-col items-center space-y-2 mb-12 text-[9px] font-mono tracking-[0.3em] text-black/35 select-none pointer-events-none">
-              <span>( 01 // 06 )</span>
-              <span className="font-sans text-[8px] opacity-75">20°11'52"S 67°28'30"W</span>
-            </div>
+            <img src="/IMG_3640 (1).JPEG" alt="Vista aérea do Salar de Uyuni com balão" className="absolute inset-0 w-full h-full object-cover z-0" />
+            <div className="absolute inset-0 bg-white/70 z-0" />
+            
+            <div className="relative z-10">
+              {/* Index Counter and Coordinate Stamp */}
+              <div className="flex flex-col items-center space-y-2 mb-12 text-[9px] font-mono tracking-[0.3em] text-black/35 select-none pointer-events-none">
+                <span>( 01 // 06 )</span>
+                <span className="font-sans text-[8px] opacity-75">20°11'52"S 67°28'30"W</span>
+              </div>
 
-            <div className="w-20 h-20 border border-black/5 rounded-full flex items-center justify-center mb-16 relative">
-              <svg className="absolute w-28 h-28 animate-[spin_25s_linear_infinite]" viewBox="0 0 100 100">
-                <defs>
-                  <path id="circle-path" d="M 50,50 m -35,0 a 35,35 0 1,1 70,0 a 35,35 0 1,1 -70,0" />
-                </defs>
-                <text fill="#111" fontSize="9" fontWeight="500" letterSpacing="4.5" className="opacity-80">
-                  <textPath href="#circle-path" startOffset="0%">
-                    • SALAR BALLOONS • PRIVATE & EXCLUSIVITY
-                  </textPath>
-                </text>
-              </svg>
-              <div className="w-1.5 h-1.5 bg-black/80 rounded-full" />
-            </div>
+              <div className="w-20 h-20 border border-black/5 rounded-full flex items-center justify-center mb-16 relative">
+                <svg className="absolute w-28 h-28 animate-[spin_25s_linear_infinite]" viewBox="0 0 100 100">
+                  <defs>
+                    <path id="circle-path" d="M 50,50 m -35,0 a 35,35 0 1,1 70,0 a 35,35 0 1,1 -70,0" />
+                  </defs>
+                  <text fill="#111" fontSize="9" fontWeight="500" letterSpacing="4.5" className="opacity-80">
+                    <textPath href="#circle-path" startOffset="0%">
+                      • SALAR BALLOONS • PRIVATE & EXCLUSIVITY
+                    </textPath>
+                  </text>
+                </svg>
+                <div className="w-1.5 h-1.5 bg-black/80 rounded-full" />
+              </div>
 
-            {/* Nova Tipografia Refinada e Compactada a partir do DOCX */}
-            <div className="max-w-6xl space-y-4">
-              <SplitText className="text-3xl md:text-6xl lg:text-[4.5rem] font-serif text-[#111] font-medium tracking-tight leading-[1.05] uppercase">
-                The World’s Most
-              </SplitText>
-              <SplitText className="text-3xl md:text-6xl lg:text-[4.5rem] font-serif text-[#111] font-medium tracking-tight leading-[1.05] uppercase">
-                Extraordinary Balloon
-              </SplitText>
-              <SplitText className="text-3xl md:text-6xl lg:text-[4.5rem] font-serif text-black/40 font-medium tracking-tight leading-[1.05] uppercase">
-                Experience Above the
-              </SplitText>
-              <SplitText className="text-3xl md:text-6xl lg:text-[4.5rem] font-serif text-[#111] font-medium tracking-tight leading-[1.05] uppercase">
-                Breathtaking Uyuni Mirror.
-              </SplitText>
-            </div>
+              {/* Nova Tipografia Refinada e Compactada a partir do DOCX */}
+              <div className="max-w-6xl space-y-4">
+                <SplitText className="text-3xl md:text-6xl lg:text-[4.5rem] font-serif text-[#111] font-medium tracking-tight leading-[1.05] uppercase">
+                  The World’s Most
+                </SplitText>
+                <SplitText className="text-3xl md:text-6xl lg:text-[4.5rem] font-serif text-[#111] font-medium tracking-tight leading-[1.05] uppercase">
+                  Extraordinary Balloon
+                </SplitText>
+                <SplitText className="text-3xl md:text-6xl lg:text-[4.5rem] font-serif text-black/40 font-medium tracking-tight leading-[1.05] uppercase">
+                  Experience Above the
+                </SplitText>
+                <SplitText className="text-3xl md:text-6xl lg:text-[4.5rem] font-serif text-[#111] font-medium tracking-tight leading-[1.05] uppercase">
+                  Breathtaking Uyuni Mirror.
+                </SplitText>
+              </div>
 
-            <div className="mt-20 max-w-xl text-center mx-auto space-y-6">
-              <p className="text-black/60 text-[13px] md:text-[14px] leading-[1.85] font-light tracking-wide">
-                An extraordinary private balloon journey designed with sartorial precision. 
-                Float in absolute silence over the largest reflective mirror on Earth — where every 
-                detail of your flight is tailored to deliver the experience of a lifetime.
-              </p>
-              <div className="pt-6 flex justify-center space-x-6">
-                <a href="#experience" className="px-8 py-3.5 border border-black text-black bg-transparent rounded-full text-[10px] font-semibold tracking-[0.25em] uppercase hover:bg-black hover:text-white transition-all duration-500 cubic-bezier(0.16, 1, 0.3, 1)">
-                  Discover Flight
-                </a>
+              <div className="mt-20 max-w-xl text-center mx-auto space-y-6">
+                <p className="text-black/60 text-[13px] md:text-[14px] leading-[1.85] font-light tracking-wide">
+                  An extraordinary private balloon journey designed with sartorial precision. 
+                  Float in absolute silence over the largest reflective mirror on Earth — where every 
+                  detail of your flight is tailored to deliver the experience of a lifetime.
+                </p>
+                <div className="pt-6 flex justify-center space-x-6">
+                  <a href="#experience" className="px-8 py-3.5 border border-black text-black bg-transparent rounded-full text-[10px] font-semibold tracking-[0.25em] uppercase hover:bg-black hover:text-white transition-all duration-500 cubic-bezier(0.16, 1, 0.3, 1)">
+                    Discover Flight
+                  </a>
+                </div>
               </div>
             </div>
 
@@ -1594,6 +1600,7 @@ export default function App() {
                 <a href="#safety" className="hover:text-black transition-colors">Safety</a>
                 <a href="#faq" className="hover:text-black transition-colors">FAQ</a>
                 <a href="#gallery" className="hover:text-black transition-colors">Gallery</a>
+                <a href="#contact" className="hover:text-black transition-colors">Contact</a>
               </nav>
               <a 
                 href="https://wa.me/5531982352679"
@@ -1673,10 +1680,11 @@ export default function App() {
           <a href="#safety" onClick={() => setIsMobileMenuOpen(false)} className="hover:text-[#c5a880] transition-colors duration-300">Safety</a>
           <a href="#faq" onClick={() => setIsMobileMenuOpen(false)} className="hover:text-[#c5a880] transition-colors duration-300">FAQ</a>
           <a href="#gallery" onClick={() => setIsMobileMenuOpen(false)} className="hover:text-[#c5a880] transition-colors duration-300">Gallery</a>
+          <a href="#contact" onClick={() => setIsMobileMenuOpen(false)} className="hover:text-[#c5a880] transition-colors duration-300">Contact</a>
           
           <div className="pt-6">
-            <a href="#contact" onClick={() => setIsMobileMenuOpen(false)} className="inline-block text-[10px] font-bold tracking-[0.25em] border border-black px-12 py-3.5 rounded-full hover:bg-black hover:text-white transition-all duration-300 uppercase">
-              RESERVAR
+            <a href="https://wa.me/5531982352679" target="_blank" rel="noopener noreferrer" onClick={() => setIsMobileMenuOpen(false)} className="inline-block text-[10px] font-bold tracking-[0.25em] border border-black px-12 py-3.5 rounded-full hover:bg-black hover:text-white transition-all duration-300 uppercase">
+              Book Your Flight
             </a>
           </div>
         </nav>
