@@ -40,7 +40,41 @@ export default function Experience() {
             {/* Timeline Steps Column */}
             <div className="lg:col-span-7 space-y-12">
               {[
-                // ... (items from timeline remain unchanged)
+                {
+                  num: "01",
+                  title: "Luxury Hotel Pickup",
+                  desc: "Your journey begins with private transportation directly from your hotel, allowing you to relax while the landscapes of the Bolivian Altiplano slowly awaken before sunrise."
+                },
+                {
+                  num: "02",
+                  title: "Sunrise Lounge in the Salt Flats",
+                  desc: "Arriving at our private launch site, guests are welcomed into an elegant sunrise setting with lounge seating, comfortable poufs, and shaded umbrellas overlooking the balloon inflation experience."
+                },
+                {
+                  num: "03",
+                  title: "Sunrise Brunch Experience",
+                  desc: "As the first light touches the salt flats, enjoy a carefully curated brunch experience featuring delicious food and beverages while surrounded by endless horizons."
+                },
+                {
+                  num: "04",
+                  title: "Safety Briefing & Boarding",
+                  desc: "Before takeoff, guests receive a detailed safety briefing from our highly experienced multilingual pilot, ensuring maximum comfort and confidence before boarding."
+                },
+                {
+                  num: "05",
+                  title: "A Spectacular Flight Above Salar de Uyuni",
+                  desc: "Lift gently into the sky for an extraordinary hot air balloon journey above the breathtaking landscapes of Salar de Uyuni."
+                },
+                {
+                  num: "06",
+                  title: "Champagne Celebration & Souvenir",
+                  desc: "Upon landing, celebrate the moment with a special champagne toast, honoring an unforgettable journey above Salar de Uyuni."
+                },
+                {
+                  num: "07",
+                  title: "Luxury Breakfast & Return",
+                  desc: "Guests are comfortably transported back to their hotel, where a beautiful breakfast experience awaits to conclude the morning in style."
+                }
               ].map((step, idx) => (
                 <div key={idx} className="flex gap-8 border-b border-black/5 pb-8">
                   <span className="font-serif text-lg font-bold text-black/30 pt-1">{step.num}</span>
