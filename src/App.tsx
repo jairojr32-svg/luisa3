@@ -674,15 +674,15 @@ export default function App() {
     return () => window.removeEventListener('resize', handleResize);
   }, [currentPage]);
 
-  const [isFrameDirty, setIsFrameDirty] = useState(false);
-
   useLenis(({ progress, scroll }) => {
     if (currentPage === 'home') {
       const heroHeight = window.innerHeight * 2;
       const scrollProgress = Math.min(scroll / heroHeight, 1);
       scrollProgressRef.current = scrollProgress;
-      
-      setIsFrameDirty(true);
+
+      // Renderização instantânea do frame correspondente
+      const frameIndex = Math.min(Math.floor(scrollProgress * 299), 299);
+      drawFrame(frameIndex);
 
       // Otimização de Performance
       if (scroll > heroHeight) {
@@ -721,24 +721,6 @@ export default function App() {
       }
     }
   });
-
-  useEffect(() => {
-    if (!isFrameDirty) return;
-
-    const frameIndex = Math.min(Math.floor(scrollProgressRef.current * 299), 299);
-    
-    let rafId: number;
-    const updateFrame = () => {
-      drawFrame(frameIndex);
-      setIsFrameDirty(false);
-    };
-
-    rafId = requestAnimationFrame(updateFrame);
-
-    return () => {
-      cancelAnimationFrame(rafId);
-    };
-  }, [isFrameDirty]);
 
   useLayoutEffect(() => {
     if (currentPage !== 'home') return;
