@@ -1077,7 +1077,7 @@ export default function App() {
           
           <div ref={whiteSectionRef} className="min-h-screen flex flex-col justify-center items-center px-6 md:px-24 text-center relative">
             
-            <img src="/IMG_3640 (1).JPEG" alt="Vista aérea do Salar de Uyuni com balão" className="absolute inset-0 w-full h-full object-cover z-0" />
+            <img src="/intro-background.jpeg" alt="Vista aérea do Salar de Uyuni com balão" className="absolute inset-0 w-full h-full object-cover z-0" />
             <div className="absolute inset-0 bg-white/70 z-0" />
 
             <div className="relative z-10 flex flex-col items-center w-full pt-32 pb-32">
