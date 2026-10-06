@@ -28,8 +28,8 @@ export default function Contact() {
   };
 
   return (
-    <div className="min-h-screen w-full bg-[#f8f9fa]/75 backdrop-blur-md text-black px-5 xs:px-6 sm:px-12 md:px-24 transition-all duration-500">
-      <div className="max-w-7xl mx-auto space-y-32 pt-24 md:pt-40">
+    <div className="min-h-screen w-full bg-[#f8f9fa]/75 backdrop-blur-md text-black transition-all duration-500">
+      <div className="max-w-7xl mx-auto space-y-32 pt-32 pb-24 px-5 xs:px-6 sm:px-12 md:px-24">
         
         {/* HERO SECTION */}
         <div className="text-center max-w-4xl mx-auto space-y-8">

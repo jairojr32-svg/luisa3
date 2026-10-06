@@ -7,7 +7,7 @@ export default function Safety() {
         <div className="relative text-center flex items-center justify-center min-h-[70vh] py-24 md:py-32">
           <div className="absolute inset-0 z-0">
             <img 
-              src="/Experiencia Salar Balloons/166685875-2.jpg" 
+              src="/IMG_3793.PNG" 
               alt="Salar Balloons Safety" 
               className="w-full h-full object-cover"
             />

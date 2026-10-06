@@ -445,6 +445,14 @@ export default function App() {
     return () => window.removeEventListener('hashchange', handleHashChange);
   }, []);
 
+  useEffect(() => {
+    // Força a página a carregar no topo e desativa a restauração de scroll do navegador
+    if ('scrollRestoration' in window.history) {
+      window.history.scrollRestoration = 'manual';
+    }
+    window.scrollTo(0, 0);
+  }, [currentPage]); // Re-executa sempre que a página (hash) muda
+
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isFirstFrameDrawn, setIsFirstFrameDrawn] = useState(false);
   const [isDarkBg, setIsDarkBg] = useState(false);
@@ -1065,15 +1073,14 @@ export default function App() {
           </div>
         </section>
 
-        {/* CENA 2: INTRODUÇÃO EDITORIAL (Abaixo do Balão 3D, Fundo Off-White) */}
-        <section id="experiencia" className="relative z-30 w-full bg-[#fcfbf7] pt-32 pb-32">
+        <section id="experiencia" className="relative z-30 w-full bg-[#fcfbf7]">
           
-          <div ref={whiteSectionRef} className="min-h-screen flex flex-col justify-center items-center px-6 md:px-24 text-center relative overflow-hidden">
+          <div ref={whiteSectionRef} className="min-h-screen flex flex-col justify-center items-center px-6 md:px-24 text-center relative">
             
             <img src="/IMG_3640 (1).JPEG" alt="Vista aérea do Salar de Uyuni com balão" className="absolute inset-0 w-full h-full object-cover z-0" />
             <div className="absolute inset-0 bg-white/70 z-0" />
-            
-            <div className="relative z-10">
+
+            <div className="relative z-10 flex flex-col items-center w-full pt-32 pb-32">
               {/* Index Counter and Coordinate Stamp */}
               <div className="flex flex-col items-center space-y-2 mb-12 text-[9px] font-mono tracking-[0.3em] text-black/35 select-none pointer-events-none">
                 <span>( 01 // 06 )</span>
@@ -1413,11 +1420,6 @@ export default function App() {
               Infinite white horizons, surreal mirror reflections, and a breathtaking absolute silence. 
               Salar de Uyuni is a magical landscape that transforms across the seasons, waiting to be discovered from above.
             </p>
-            <div className="pt-4">
-              <button className="px-10 py-3.5 border border-white text-white bg-transparent rounded-full text-[10px] font-semibold tracking-[0.25em] uppercase hover:bg-white hover:text-black transition-all duration-500 cubic-bezier(0.16, 1, 0.3, 1)">
-                Discover Salar de Uyuni
-              </button>
-            </div>
           </div>
         </section>
 
@@ -1438,7 +1440,7 @@ export default function App() {
             </div>
 
             {/* Editorial Grid Layout */}
-            <div className="grid grid-cols-1 md:grid-cols-12 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-12 gap-2">
               <div className="gallery-item md:col-span-8 min-h-[300px] md:h-[380px] rounded-none overflow-hidden border border-black/5 group relative cursor-pointer">
                 <img 
                   src="/1 - SALAR/AdobeStock_680985457.jpeg" 

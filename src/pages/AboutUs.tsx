@@ -96,7 +96,7 @@ export default function AboutUs() {
               <div className="space-y-4">
                 <div>
                   <h3 className="font-serif text-xl uppercase font-semibold text-black">Luiza Ferrari</h3>
-                  <span className="text-[10px] font-bold uppercase tracking-wider text-black">Co-Founder</span>
+                  <span className="text-[10px] font-bold uppercase tracking-wider text-black">CO-FOUNDER & VISIONARY</span>
                 </div>
                 <p className="text-xs text-[#555] leading-relaxed">
                   Luiza Ferrari is a Brazilian skydiver, extreme sports multi-athlete, explorer, and specialist in extraordinary projects in remote and exotic locations.
@@ -126,25 +126,6 @@ export default function AboutUs() {
               </div>
             </div>
 
-            {/* JUAN GABRIEL QUESADA */}
-            <div className="border border-black/5 rounded-[2rem] p-6 xs:p-8 md:p-12 bg-white/40 hover:border-black/20 transition-all space-y-6 flex flex-col md:flex-row gap-6 md:gap-8 items-center md:items-start text-center md:text-left">
-              <div className="w-32 h-32 md:w-44 md:h-44 rounded-full overflow-hidden shrink-0 border border-black/5 mx-auto md:mx-0">
-                <img src="/Fotos melhores /JUAN_GABRIEL_QUESADA.PNG" alt="Juan Gabriel Quesada" className="w-full h-full object-cover" />
-              </div>
-              <div className="space-y-4">
-                <div>
-                  <h3 className="font-serif text-xl uppercase font-semibold text-black">Juan Gabriel Quesada</h3>
-                  <span className="text-[10px] font-bold uppercase tracking-wider text-black">Local Partner</span>
-                </div>
-                <p className="text-xs text-[#555] leading-relaxed">
-                  Owner of Hidalgo Tours and the iconic Palacio de Sal, Juan Gabriel is Salar Balloons’ local strategic partner and one of the key people who helped make this project possible.
-                </p>
-                <p className="text-xs text-[#555] leading-relaxed">
-                  With deep regional expertise and a strong commitment to tourism development in Bolivia, his partnership plays a fundamental role in delivering an exceptional guest experience.
-                </p>
-              </div>
-            </div>
-
             {/* CHRISTIAN KALOUSDIAN */}
             <div className="border border-black/5 rounded-[2rem] p-6 xs:p-8 md:p-12 bg-white/40 hover:border-black/20 transition-all space-y-6 flex flex-col md:flex-row gap-6 md:gap-8 items-center md:items-start text-center md:text-left">
               <div className="w-32 h-32 md:w-44 md:h-44 rounded-full overflow-hidden shrink-0 border border-black/5 mx-auto md:mx-0">
@@ -160,6 +141,25 @@ export default function AboutUs() {
                 </p>
                 <p className="text-xs text-[#555] leading-relaxed">
                   A highly experienced multilingual pilot certified in both Europe and Brazil, Christian brings decades of expertise in ballooning, aviation safety, and high-altitude flight operations. His technical knowledge and operational leadership ensure absolute safety.
+                </p>
+              </div>
+            </div>
+
+            {/* JUAN GABRIEL QUESADA */}
+            <div className="border border-black/5 rounded-[2rem] p-6 xs:p-8 md:p-12 bg-white/40 hover:border-black/20 transition-all space-y-6 flex flex-col md:flex-row gap-6 md:gap-8 items-center md:items-start text-center md:text-left">
+              <div className="w-32 h-32 md:w-44 md:h-44 rounded-full overflow-hidden shrink-0 border border-black/5 mx-auto md:mx-0">
+                <img src="/Fotos melhores /JUAN_GABRIEL_QUESADA.PNG" alt="Juan Gabriel Quesada" className="w-full h-full object-cover" />
+              </div>
+              <div className="space-y-4">
+                <div>
+                  <h3 className="font-serif text-xl uppercase font-semibold text-black">Juan Gabriel Quesada</h3>
+                  <span className="text-[10px] font-bold uppercase tracking-wider text-black">Local Partner</span>
+                </div>
+                <p className="text-xs text-[#555] leading-relaxed">
+                  Owner of Hidalgo Tours and the iconic Palacio de Sal, Juan Gabriel is Salar Balloons’ local strategic partner and one of the key people who helped make this project possible.
+                </p>
+                <p className="text-xs text-[#555] leading-relaxed">
+                  With deep regional expertise and a strong commitment to tourism development in Bolivia, his partnership plays a fundamental role in delivering an exceptional guest experience.
                 </p>
               </div>
             </div>
